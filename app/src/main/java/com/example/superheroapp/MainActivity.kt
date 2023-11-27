@@ -15,11 +15,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         musica = MediaPlayer.create(this,R.raw.ljsonido)
-        //musica.start()
+        musica.start()
         binding.imageView.animate().setStartDelay(1000).setDuration(6000).scaleY(2f).scaleX(1.5f).withEndAction{
                    startActivity(Intent(this,Home::class.java))
-            //musica.stop()
+            musica.stop()
         }   .start()
         pantallaCompleta()
 
